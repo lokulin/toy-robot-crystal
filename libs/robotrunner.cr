@@ -12,7 +12,6 @@ class RobotRunner
   end
 
   def run
-    @dirs = %w{NORTH EAST SOUTH WEST}
     robot = Robot.new(0,0,0,nil,@dirs)
 
     while line = STDIN.gets
