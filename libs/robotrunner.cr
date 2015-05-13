@@ -15,7 +15,7 @@ class RobotRunner
     @dirs = %w{NORTH EAST SOUTH WEST}
     robot = Robot.new(0,0,0,nil,@dirs)
 
-    File.each_line(ARGV[0]) do |line|
+    while line = STDIN.gets
       match = /(?<=^)(MOVE$|LEFT$|RIGHT$|REPORT$|PLACE(?=\s?(\d+),(\d+),(NORTH|EAST|SOUTH|WEST)$))/.match(line)
       cmd = match.try &.[1]
       x = match.try &.[2]

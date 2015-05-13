@@ -1,6 +1,5 @@
 require "./libs/robotrunner"
 
-abort("usage: toyrobot [input.txt] | [< input.txt]\n") unless ARGV.length <= 1
+abort("usage: toyrobot < [input.txt]\n") unless ARGV.length == 0
 
-robotrunner=RobotRunner.new
-robotrunner.run
+RobotRunner.new.run
